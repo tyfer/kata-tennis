@@ -1,0 +1,221 @@
+<head>
+    <style>
+        .score-table{
+            display: table;
+            width: 75%;
+        }
+
+        .score-line{
+            display: table-row;
+            flex: content-box;
+        }
+
+        .players-column{
+            display: table-cell;
+            width: 30%;
+        }
+
+        .current-game-score-column{
+            display: table-cell;
+            width: 20%;
+        }
+
+        .set-score-column{
+            display: table-cell;
+            width: 10%;
+        }
+    </style>
+</head>
+<div style="text-align:center; display: table; margin-left: 33%;">
+    <div style="display: table-row;">
+        <div style="display: table-cell">
+            <img width="150" alt="Tennis racket Logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDY0IDY0IiBoZWlnaHQ9IjY0cHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0cHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnPjxnPjxnPjxwYXRoIGQ9Ik0xOC42MjMsMS44MTJjLTcuODg0LDQuMzQzLTEwLjI2MSwxNS4xNTMtNS4zMDIsMjQuMTU3YzMuNTkzLDYuNTI1LDEwLjA0OSwxMC4zMTUsMTYuMzQ0LDEwLjIzOCAgICAgbDcuOTk1LDUuOTIzbDQuODEyLTIuNjUxbC0wLjY2OC05Ljk1NWMzLjQwOC01LjI4NCwzLjY2NC0xMi43NTQsMC4wNzEtMTkuMjc5QzM2LjkxNSwxLjIzOSwyNi41MS0yLjUzMiwxOC42MjMsMS44MTJ6ICAgICAgTTM1LjIzNiwzMS44ODRjLTYuNTIyLDMuNTkxLTE1LjIsMC4zNDgtMTkuMzgtNy4yNDJjLTQuMTgtNy41OS0yLjI4My0xNi42NTYsNC4yNC0yMC4yNDdjNi41MjItMy41OTIsMTUuMTk4LTAuMzUsMTkuMzgsNy4yNDEgICAgIEM0My42NTYsMTkuMjI3LDQxLjc1OCwyOC4yOTMsMzUuMjM2LDMxLjg4NHoiIGZpbGw9IiMyNDFGMjAiLz48L2c+PHBhdGggZD0iTTQzLjYwNiw0MS41NzlsMTAuNDM5LDE4Ljk1NmMwLjQxLDAuNzQ3LDAuMTM3LDEuNjk0LTAuNjEsMi4xMDVMNTEuMzMxLDYzLjggICAgYy0wLjc0NywwLjQxMS0xLjY5NSwwLjEzOC0yLjEwNS0wLjYxMWwtMTAuNDQtMTguOTU0TDQzLjYwNiw0MS41Nzl6IiBmaWxsPSIjMjQxRjIwIi8+PC9nPjxwYXRoIGQ9Ik0yMS4zMTcsNDAuODE0Yy02LjM4MiwwLTExLjU1Myw1LjE3My0xMS41NTMsMTEuNTU0czUuMTcxLDExLjU1NCwxMS41NTMsMTEuNTU0ICAgYzYuMzgxLDAsMTEuNTU0LTUuMTczLDExLjU1NC0xMS41NTRTMjcuNjk4LDQwLjgxNCwyMS4zMTcsNDAuODE0eiBNMTIuNzk2LDUyLjM2N2MwLTIuMzUsMC45NTItNC40NzksMi40OS02LjAyICAgYzAuMDMsMC4xMDYsMC4wMzcsMC4yMDEsMC4wODUsMC4zMTJjMy4xMjcsNC41NTUsMC43OTQsOS41NDQtMC4xNzEsMTEuMDY3Yy0wLjA3NywwLjEyMi0wLjEyOCwwLjI1LTAuMTY4LDAuMzggICBDMTMuNjQ4LDU2LjU5MiwxMi43OTYsNTQuNTgxLDEyLjc5Niw1Mi4zNjd6IE0xNy40MTIsNTkuOTM0YzAuMDU2LTAuMDY3LDAuMTEzLTAuMTM0LDAuMTY3LTAuMjE5ICAgYzUuNTc4LTguMzU4LDAuMjAzLTE0Ljk1OSwwLjIwMy0xNC45NTljLTAuMDM2LTAuMDMzLTAuMDgyLTAuMDQ2LTAuMTItMC4wNzdjMS4xMDktMC41MjcsMi4zNDUtMC44MzIsMy42NTYtMC44MzIgICBjMS40MzgsMCwyLjc4OSwwLjM1OCwzLjk3NywwLjk4OGMtMC4wMjEsMC4wMjUtNS4zNiw2LjYxMiwwLjIwNSwxNC45NTJjLTEuMjM3LDAuNjk4LTIuNjYyLDEuMTAyLTQuMTgyLDEuMTAyICAgQzE5LjkwOCw2MC44ODksMTguNTgyLDYwLjUzOSwxNy40MTIsNTkuOTM0eiBNMjcuODc4LDU3LjgwM2MtMC45NjYtMS41MjItMy4yOTctNi41MDktMC4xNzItMTEuMDYyICAgYzEuMzIzLDEuNTAyLDIuMTMxLDMuNDY3LDIuMTMxLDUuNjI3QzI5LjgzNyw1NC40MzMsMjkuMTAyLDU2LjMyNiwyNy44NzgsNTcuODAzeiIgZmlsbD0iIzI0MUYyMCIvPjwvZz48L3N2Zz4=" style="
+                -moz-transform: scaleX(-1);
+                -o-transform: scaleX(-1);
+                -webkit-transform: scaleX(-1);
+                transform: scaleX(-1);">
+        </div>
+        <div style="display: table-cell">
+            <h1> {{ title }} !  </h1>
+        </div>
+        <div style="display: table-cell">
+            <img width="150" alt="Tennis racket Logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDY0IDY0IiBoZWlnaHQ9IjY0cHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0cHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnPjxnPjxnPjxwYXRoIGQ9Ik0xOC42MjMsMS44MTJjLTcuODg0LDQuMzQzLTEwLjI2MSwxNS4xNTMtNS4zMDIsMjQuMTU3YzMuNTkzLDYuNTI1LDEwLjA0OSwxMC4zMTUsMTYuMzQ0LDEwLjIzOCAgICAgbDcuOTk1LDUuOTIzbDQuODEyLTIuNjUxbC0wLjY2OC05Ljk1NWMzLjQwOC01LjI4NCwzLjY2NC0xMi43NTQsMC4wNzEtMTkuMjc5QzM2LjkxNSwxLjIzOSwyNi41MS0yLjUzMiwxOC42MjMsMS44MTJ6ICAgICAgTTM1LjIzNiwzMS44ODRjLTYuNTIyLDMuNTkxLTE1LjIsMC4zNDgtMTkuMzgtNy4yNDJjLTQuMTgtNy41OS0yLjI4My0xNi42NTYsNC4yNC0yMC4yNDdjNi41MjItMy41OTIsMTUuMTk4LTAuMzUsMTkuMzgsNy4yNDEgICAgIEM0My42NTYsMTkuMjI3LDQxLjc1OCwyOC4yOTMsMzUuMjM2LDMxLjg4NHoiIGZpbGw9IiMyNDFGMjAiLz48L2c+PHBhdGggZD0iTTQzLjYwNiw0MS41NzlsMTAuNDM5LDE4Ljk1NmMwLjQxLDAuNzQ3LDAuMTM3LDEuNjk0LTAuNjEsMi4xMDVMNTEuMzMxLDYzLjggICAgYy0wLjc0NywwLjQxMS0xLjY5NSwwLjEzOC0yLjEwNS0wLjYxMWwtMTAuNDQtMTguOTU0TDQzLjYwNiw0MS41Nzl6IiBmaWxsPSIjMjQxRjIwIi8+PC9nPjxwYXRoIGQ9Ik0yMS4zMTcsNDAuODE0Yy02LjM4MiwwLTExLjU1Myw1LjE3My0xMS41NTMsMTEuNTU0czUuMTcxLDExLjU1NCwxMS41NTMsMTEuNTU0ICAgYzYuMzgxLDAsMTEuNTU0LTUuMTczLDExLjU1NC0xMS41NTRTMjcuNjk4LDQwLjgxNCwyMS4zMTcsNDAuODE0eiBNMTIuNzk2LDUyLjM2N2MwLTIuMzUsMC45NTItNC40NzksMi40OS02LjAyICAgYzAuMDMsMC4xMDYsMC4wMzcsMC4yMDEsMC4wODUsMC4zMTJjMy4xMjcsNC41NTUsMC43OTQsOS41NDQtMC4xNzEsMTEuMDY3Yy0wLjA3NywwLjEyMi0wLjEyOCwwLjI1LTAuMTY4LDAuMzggICBDMTMuNjQ4LDU2LjU5MiwxMi43OTYsNTQuNTgxLDEyLjc5Niw1Mi4zNjd6IE0xNy40MTIsNTkuOTM0YzAuMDU2LTAuMDY3LDAuMTEzLTAuMTM0LDAuMTY3LTAuMjE5ICAgYzUuNTc4LTguMzU4LDAuMjAzLTE0Ljk1OSwwLjIwMy0xNC45NTljLTAuMDM2LTAuMDMzLTAuMDgyLTAuMDQ2LTAuMTItMC4wNzdjMS4xMDktMC41MjcsMi4zNDUtMC44MzIsMy42NTYtMC44MzIgICBjMS40MzgsMCwyLjc4OSwwLjM1OCwzLjk3NywwLjk4OGMtMC4wMjEsMC4wMjUtNS4zNiw2LjYxMiwwLjIwNSwxNC45NTJjLTEuMjM3LDAuNjk4LTIuNjYyLDEuMTAyLTQuMTgyLDEuMTAyICAgQzE5LjkwOCw2MC44ODksMTguNTgyLDYwLjUzOSwxNy40MTIsNTkuOTM0eiBNMjcuODc4LDU3LjgwM2MtMC45NjYtMS41MjItMy4yOTctNi41MDktMC4xNzItMTEuMDYyICAgYzEuMzIzLDEuNTAyLDIuMTMxLDMuNDY3LDIuMTMxLDUuNjI3QzI5LjgzNyw1NC40MzMsMjkuMTAyLDU2LjMyNiwyNy44NzgsNTcuODAzeiIgZmlsbD0iIzI0MUYyMCIvPjwvZz48L3N2Zz4=">
+        </div>
+    </div>
+</div>
+
+<div style="display: table" >
+    <div style="display: table-row">
+        <div style="display: table-cell">Number of set(s) to win the match : </div>
+            <div style="display: table-cell; padding-right: 12px;" *ngFor="let entry of nbOfSetsEntries">
+            <input type="radio"
+                   name="nbOfSets"
+                   [checked]="entry.value === 1"
+                   [value]="entry.value"
+                   (change)="onSelectionChange(entry.value)"
+                   [disabled]="match.currentSetNumber">
+            <label> {{entry.libelle}}</label>
+        </div>
+    </div>
+</div>
+
+<div style="display: table">
+    <div style="display: table-row">
+        <div style="display: table-cell">
+            <button class="btn btn-success" (click)="togleOnOff(match)" style="
+                height: 70px;
+                width: 270px;
+                margin: 10px;
+                border-radius: 25px;
+                background-color: whitesmoke;
+                cursor: pointer;
+            ">{{onOffButtonLabel}}</button>
+        </div>
+        <div style="
+            display: table-cell;
+            text-align: center;
+            width: 75%;
+            ">{{match.refereeMessage}}</div>
+
+    </div>
+</div>
+
+<div class="gameScore-table" style="display: table;width: 70%;padding-left: 15%;padding-right: 15%;">
+
+    <div class="gameScore-line" style="
+    text-align: center;
+    display: table-row;
+    height: 26px;
+    vertical-align: middle;">
+        <div class="players-column" style="
+        display: table-cell;
+        width: 30%;
+        /* border: 1px solid; */"></div>
+        <div class="current-game-gameScore-column" style="
+        display: table-cell;
+        width: 20%;
+        border: 1px solid;
+        border-left: 2px solid;">Current game</div>
+        <div class="set-gameScore-column" style="
+        display: table-cell;
+        width: 10%;
+        border: 1px solid;">Set 1</div>
+        <div class="set-gameScore-column" *ngIf="match.currentSetNumber >= 2" style="
+        display: table-cell;
+        width: 10%;
+        border: 1px solid;">Set 2</div>
+        <div class="set-gameScore-column" *ngIf="match.currentSetNumber >= 3" style="
+        display: table-cell;
+        width: 10%;
+        border: 1px solid;">Set 3</div>
+        <div class="set-gameScore-column" *ngIf="match.currentSetNumber >= 4" style="
+        display: table-cell;
+        width: 10%;
+        border: 1px solid;">Set 4</div>
+        <div class="set-gameScore-column" *ngIf="match.currentSetNumber == 5" style="
+        display: table-cell;
+        width: 10%;
+        border: 1px solid;
+        border-right: 2px solid;">Set 5</div>
+    </div>
+
+    <div class="gameScore-line" style="
+    text-align: center;
+    display: table-row;
+    height: 26px;
+    vertical-align: middle;">
+        <div class="players-column" style="
+        display: table-cell;
+        width: 30%;
+        border: 1px solid;
+        border-left: 2px solid;">{{ match.player1.name }}</div>
+        <div class="current-game-gameScore-column" style="
+        display: table-cell;
+        width: 20%;
+        border: 1px solid;">{{ match.player1.globalGameScore }}</div>
+        <div class="set-gameScore-column" style="
+        display: table-cell;
+        width: 10%;
+        border: 1px solid;">{{ match.player1.setScores[1] }}</div>
+        <div class="set-gameScore-column" *ngIf="match.currentSetNumber >= 2" style="
+        display: table-cell;
+        width: 10%;
+        border: 1px solid;">{{ match.player1.setScores[2] }}</div>
+        <div class="set-gameScore-column" *ngIf="match.currentSetNumber >= 3" style="
+        display: table-cell;
+        width: 10%;
+        border: 1px solid;">{{ match.player1.setScores[3] }}</div>
+        <div class="set-gameScore-column" *ngIf="match.currentSetNumber >= 4" style="
+        display: table-cell;
+        width: 10%;
+        border: 1px solid;">{{ match.player1.setScores[4] }}</div>
+        <div class="set-gameScore-column" *ngIf="match.currentSetNumber == 5" style="
+        display: table-cell;
+        width: 10%;
+        border: 1px solid;
+        border-right: 2px solid;">{{ match.player1.setScores[5] }}</div>
+    </div>
+
+    <div class="gameScore-line" style="
+    text-align: center;
+    display: table-row;
+    height: 26px;
+    vertical-align: middle;">
+        <div class="players-column" style="
+        display: table-cell;
+        width: 30%;
+        border: 1px solid;
+        border-left: 2px solid;">{{ match.player2.name }}</div>
+        <div class="current-game-gameScore-column" style="
+        display: table-cell;
+        width: 20%;
+        border: 1px solid;">{{ match.player2.globalGameScore }}</div>
+        <div class="set-gameScore-column" style="
+        display: table-cell;
+        width: 10%;
+        border: 1px solid;">{{ match.player2.setScores[1] }}</div>
+        <div class="set-gameScore-column" *ngIf="match.currentSetNumber >= 2" style="
+        display: table-cell;
+        width: 10%;
+        border: 1px solid;">{{ match.player2.setScores[2] }}</div>
+        <div class="set-gameScore-column" *ngIf="match.currentSetNumber >= 3" style="
+        display: table-cell;
+        width: 10%;
+        border: 1px solid;">{{ match.player2.setScores[3] }}</div>
+        <div class="set-gameScore-column" *ngIf="match.currentSetNumber >= 4" style="
+        display: table-cell;
+        width: 10%;
+        border: 1px solid;">{{ match.player2.setScores[4] }}</div>
+        <div class="set-gameScore-column" *ngIf="match.currentSetNumber == 5" style="
+        display: table-cell;
+        width: 10%;
+        border: 1px solid;
+        border-right: 2px solid;">{{ match.player2.setScores[5] }}</div>
+    </div>
+
+</div>
+
+<div *ngIf="match.currentSetNumber && !match.finish" style="display: inline; margin-left: 33%;">
+<button class="btn btn-success" (click)="onPlayerWinsPoint(1)" style="
+    height: 70px;
+    width: 270px;
+    margin: 10px;
+    border-radius: 25px;
+    background-color: aquamarine;
+    cursor: pointer;
+">Player 1 wins the point</button>
+<button class="btn btn-success" (click)="onPlayerWinsPoint(2)" style="
+    height: 70px;
+    width: 270px;
+    margin: 10px;
+    border-radius: 25px;
+    background-color: lightpink;
+    cursor: pointer;
+">Player 2 wins the point</button>
+</div>
+
+<div style="text-align: right; color: blue; font-style: italic;">
+    version : {{app_version}}
+</div>
+
+

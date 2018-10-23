@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/kata-back-end/kata-back-end.iml" filepath="$PROJECT_DIR$/kata-back-end/kata-back-end.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kata-front-end/kata-front-end.iml" filepath="$PROJECT_DIR$/kata-front-end/kata-front-end.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kata-parent.iml" filepath="$PROJECT_DIR$/kata-parent.iml" />
+    </modules>
+  </component>
+</project>

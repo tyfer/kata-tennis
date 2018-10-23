@@ -1,0 +1,10 @@
+/Users/yfter/IdeaProjects/kata/kata-back-end/src/main/java/com/sg/cib/tennis/kata/model/Match.java
+/Users/yfter/IdeaProjects/kata/kata-back-end/src/main/java/com/sg/cib/tennis/kata/model/Player.java
+/Users/yfter/IdeaProjects/kata/kata-back-end/src/main/java/com/sg/cib/tennis/kata/service/MatchServiceImpl.java
+/Users/yfter/IdeaProjects/kata/kata-back-end/src/main/java/com/sg/cib/tennis/kata/model/GameScores.java
+/Users/yfter/IdeaProjects/kata/kata-back-end/src/main/java/com/sg/cib/tennis/kata/controller/MatchController.java
+/Users/yfter/IdeaProjects/kata/kata-back-end/src/main/java/com/sg/cib/tennis/kata/controller/package-info.java
+/Users/yfter/IdeaProjects/kata/kata-back-end/src/main/java/com/sg/cib/tennis/kata/model/GameStoresSerializer.java
+/Users/yfter/IdeaProjects/kata/kata-back-end/src/main/java/com/sg/cib/tennis/kata/package-info.java
+/Users/yfter/IdeaProjects/kata/kata-back-end/src/main/java/com/sg/cib/tennis/kata/Application.java
+/Users/yfter/IdeaProjects/kata/kata-back-end/src/main/java/com/sg/cib/tennis/kata/service/IMatchService.java
