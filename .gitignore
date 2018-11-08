@@ -1,3 +1,7 @@
 .idea
 */target
 *.iml
+*/web/dist
+*/web/node
+*/web/node_modules
+*/.setting
